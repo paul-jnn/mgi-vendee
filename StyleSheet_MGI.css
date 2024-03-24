@@ -1,0 +1,234 @@
+
+* { /* l'* signifie qu'on s'addresse à tous le monde dans la feuille de style*/
+    overflow: auto; /* La colonne 2 est en "float" donc sont contenu peut sortie du contenant (le carré blanc)
+                        le CSS va comprendre que la colonne déborde et l'overflow va nous permet de le contraindre. */
+}
+
+
+body {
+
+    background-color: #47141ed0;
+    font-family: Arial;
+}
+
+div.contenu {
+    background-color: white;
+    margin: 40px 8px 40px 8px;
+    padding: 0px 8px 20px 8px;
+    box-shadow: 0px 0px 8px 8px rgba(77, 76, 76, 0.2); /* px : DécalageHorizontal DécalageVertical AdoucissementDégradé ImposeToutLeTour CouleurOmbre 
+                                                        L'adoucissement peut être :
+                                                            - faible (si on lui donne une valeur inférieure à celle du décalage),
+                                                            - normal (si on lui donne une valeur égale à celle du décalage)
+                                                            - ou élevé (si on lui donne une valeur supérieure à celle du décalage).*/
+    overflow: visible;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+p.description {
+    text-align: center;
+    max-width: 400px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.centre {
+    text-align: center;
+    width: 100%;
+}
+
+p.categorie {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    padding: 5px 20px;
+    margin-top: -15px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+div.categorie {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    overflow: visible;
+}
+
+div.separateur {
+    height: 1px;
+    width: 100px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.info {
+    position: relative
+}
+
+table.info {
+    position: absolute; 
+    bottom: 0px; 
+    width: 100%; 
+    color: white; 
+    background-color: #6C829DC0; 
+    height: 50px;                
+}
+
+table.info td {
+    text-align: center;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+table.info th {
+    font-size: 14px;
+    vertical-align: bottom;
+    padding-bottom: 8px;
+}
+
+img.info {
+    display: block;
+    max-height: 600px;
+    object-fit: cover; /* l'image continue de s'agrandir, mais ne dépasse pas des marges qui lui sont imposées */
+    min-height: 250px;
+}
+
+div.colonne {
+    width: 100%;
+    margin-top: 20px;
+}
+
+div.colonne h2 {
+    text-align: center;
+    text-transform: uppercase; /* passe tous les carractère en lettre capital */
+    font-size: 15px;
+    border-bottom: 5px solid #6C829D; /* fait une bordure basse de X pixels, solide (et non pointillés), de la couleur désignée */
+    padding-bottom: 5px; /* Marge entre le titre et la bordure */
+}
+
+div.colonne1 {
+    display: inline-block; /* Le block prend uniquement la place qui lui est attribué, laisse la possibilité de superposition d'un autre block */
+}
+
+div.txtcol1 p {
+    border: 3px solid lightgrey;
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+div.txtcol2 p {
+    border: 3px solid lightgrey;
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+div.txtcol3 p {
+    border: 3px solid lightgrey;
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+div.txtcol4 p {
+    border: 3px solid lightgrey;
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+table.preparation p.numero {
+    background-color: #6C829D;
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 4px;
+    box-sizing: border-box; /* Permet de calculer la dimension de la cellule sans additionner height+padding-top */
+    border-radius: 50%; /* Permet d'arrondire les angles. Ex : 4px faiyt de petits congés, 50% est la valeur pour un cercle*/
+    margin: 0px; /* Retirer les marges des paragraphe, sinon la colonne des numéros ne s'alignera pas comme demandé dans table.preparation td */
+}
+
+table.preparation td {
+    vertical-align: top;
+}
+
+table.preparation td.preparation_etape {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+table.preparation tr {
+    height: 40px; /* sera interprété comme un min-height car il s'autorisera à débordé de cette dimension */
+}
+
+/* Style pour ordinateur */
+@media only screen and (min-width: 768px) {
+    body {
+        div.contenu {
+            margin: 60px 10% 80px 10%;
+            padding: 0px 30px 30px 30px;
+            min-width: 350px;
+            
+        }
+
+        table.info {
+            height: 80px;                
+        }
+        
+        table.info td {
+            font-size: 14px;
+        }
+        
+        table.info th {
+            font-size: 16px;
+        }
+
+        div.colonne {
+            width: 45%; /* Laisse une marge totale entre les deux colonnes de 10% */
+        }
+        
+        div.colonne1 {
+            margin-right: 10%; /* "récupération" de la marge de 10% laissé dans div.colonne */
+        }
+        
+        div.colonne2 {
+            float: right; /* passe la colonne2 à droite */
+        }
+
+        div.colonne3 {
+            width: 100%;
+        }
+
+        div.colonne4 {
+            width: 100%;
+        }
+
+        
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    div.contenu {
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 645;
+        
+    }
+}
